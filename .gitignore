@@ -1,0 +1,10 @@
+.tscache/
+functions/
+lambda-function.zip
+node_modules/
+typings/
+npm-debug.log
+tscommand*
+*.swp
+docs/
+.vscode/

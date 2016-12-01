@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "target": "es2015", //The key, of course.
+        "module": "commonjs",
+        "sourceMap": true
+    }
+}

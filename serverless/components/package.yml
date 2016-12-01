@@ -1,0 +1,5 @@
+exclude:
+  - node_modules/aws-sdk
+  - node_modules/@types
+  - node_modules/serverless-plugin-write-env-vars
+  - node_modules/serverless-plugin-stage-variables

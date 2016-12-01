@@ -1,0 +1,26 @@
+# ALL CUSTOM SERVERLESS CONFIGURATIONS GO HERE
+integration: lambda-proxy
+method: any
+cors:
+  origins:
+    - '*'
+  headers:
+    - "Authorization,X-CSRFToken,Content-Type,Origin"
+currentStage: ${opt:stage, self:provider.stage}
+currentRegion: ${opt:region}
+writeEnvVars:
+    SERVERLESS_STAGE: ${self:custom.currentStage}
+    SERVERLESS_REGION: ${self:custom.currentRegion}
+    SERVERLESS_SERVICE_NAME: ${self:service}
+    NODE_TLS_REJECT_UNAUTHORIZED: ${self:custom.${self:custom.currentStage}.ignoreSSLValidation}
+stageVariables:
+    APIGatewayUrl: {"Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "ApiGatewayRestApi"
+            },
+            ".execute-api.${self:custom.currentRegion}.amazonaws.com/${self:custom.currentStage}"
+          ]
+        ]}

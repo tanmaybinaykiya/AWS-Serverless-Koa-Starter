@@ -1,0 +1,59 @@
+{
+  "name": "dummy-service",
+  "version": "1.0.0",
+  "description": "Service description goes here...",
+  "author": "Tanmay Binaykiya",
+  "scripts": {
+    "start": "node bin/www",
+    "grunt": "./node_modules/grunt/bin/grunt ",
+    "prepareForDeploy": "npm install && ./node_modules/grunt/bin/grunt cleanDeploy && cd functions && npm install --production",
+    "prepareForDeployNoInstall": "./node_modules/grunt/bin/grunt cleanDeploy && cd functions && npm install --production",
+    "deployToAws": "cd functions && ../node_modules/serverless/bin/serverless"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "dotenv": "^2.0.0",
+    "dynogels": "^6.1.0",
+    "jsonwebtoken": "7.1.9",
+    "koa": "^1.2.4",
+    "koa-better-router": "^2.0.1",
+    "koa-body": "^1.6.0",
+    "koa-cors": "0.0.16",
+    "koa-jwt": "^1.2.0",
+    "request": "^2.75.0",
+    "requestretry": "^1.12.0",
+    "serverless-plugin-stage-variables": "^1.6.6",
+    "serverless-plugin-write-env-vars": "^1.0.1",
+    "uuid": "2.0.3"
+  },
+  "devDependencies": {
+    "@types/aws-sdk": "0.0.38",
+    "@types/dotenv": "^2.0.19",
+    "@types/joi": "^9.0.32",
+    "@types/request": "^0.0.36",
+    "@types/koa": "^2.0.33",
+    "@types/node": "^6.0.45",
+    "@types/uuid": "^2.0.29",
+    "aws-sdk": "2.6.7",
+    "grunt": "^1.0.1",
+    "grunt-apidoc": "0.11.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ts": "^6.0.0-beta.3",
+    "grunt-tslint": "^3.3.0",
+    "serverless": "^1.0.2",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0"
+  },
+  "apidoc": {
+    "name": "Dummy Service",
+    "version": "1.0.0",
+    "description": "Service Description goes here... ",
+    "title": "Dummy Service",
+    "url": "http://dummy.service.com/qa",
+    "sampleUrl": "http://dummy.service.com/qa"
+  }
+}

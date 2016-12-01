@@ -1,0 +1,18 @@
+# ALL IAM CONFIGURATIONS FOLLOW You can add multiple blocks to have more granular policies
+- Effect: Allow
+  Action:
+      - dynamodb:DescribeTable
+      - dynamodb:UpdateTable
+      - dynamodb:ListTables
+      - dynamodb:BatchGetItem
+      - dynamodb:BatchWriteItem
+      - dynamodb:DeleteItem
+      - dynamodb:DescribeLimits
+      - dynamodb:GetItem
+      - dynamodb:GetRecords
+      - dynamodb:PutItem
+      - dynamodb:Query
+      - dynamodb:Scan
+      - dynamodb:UpdateItem
+  Resource:
+      - "arn:aws:dynamodb:*:*:table/${self:custom.currentStage}*"

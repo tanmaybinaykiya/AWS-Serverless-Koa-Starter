@@ -1,0 +1,46 @@
+service: dummy-service
+package: ${file(./components/package.yml)}
+provider:
+  name: aws
+  runtime: nodejs4.3
+  memorySize: 128
+  timeout: 60
+  profile: ${opt:profile}
+  region: ${opt:region}
+  vpc: ${self:custom.${self:custom.currentStage}.vpc}
+  iamRoleStatements: ${file(./components/iam.yml)}
+custom: ${file(./components/custom.yml)}
+functions: 
+  dummyService:
+    handler: dummy-service/index.handle
+    name: ${self:custom.currentStage}-dummyService
+    description: Dummy Service
+    events:
+      - http:
+          integration: ${self:custom.integration}
+          path: auth/{proxy+}
+          method: get
+          # see http://forum.serverless.com/t/serverless-v1-0-cors-methods-with-any-http-method/580
+          cors: ${self:custom.cors}
+      - http:
+          integration: ${self:custom.integration}
+          path: auth/{proxy+}
+          method: put
+          # see http://forum.serverless.com/t/serverless-v1-0-cors-methods-with-any-http-method/580
+          cors: ${self:custom.cors}
+      - http:
+          integration: ${self:custom.integration}
+          path: auth/{proxy+}
+          method: post
+          # see http://forum.serverless.com/t/serverless-v1-0-cors-methods-with-any-http-method/580
+          cors: ${self:custom.cors}
+      - http:
+          integration: ${self:custom.integration}
+          path: auth/{proxy+}
+          method: delete
+          # see http://forum.serverless.com/t/serverless-v1-0-cors-methods-with-any-http-method/580
+          cors: ${self:custom.cors}
+plugins:
+  - serverless-plugin-write-env-vars
+  - serverless-plugin-stage-variables
+resources: ${file(./components/resources.yml)}
