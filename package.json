@@ -1,6 +1,6 @@
 {
-  "name": "dummy-service",
-  "version": "1.0.0",
+  "name": "aws-serverless-koa-starter",
+  "version": "0.0.1",
   "description": "Service description goes here...",
   "author": "Tanmay Binaykiya",
   "scripts": {
@@ -46,7 +46,8 @@
     "serverless": "^1.0.2",
     "tslint": "^3.15.1",
     "typescript": "^2.0.3",
-    "typings": "^1.4.0"
+    "typings": "^1.4.0",
+    "lodash": "^4.17.2"
   },
   "apidoc": {
     "name": "Dummy Service",

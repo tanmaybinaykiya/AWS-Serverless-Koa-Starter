@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     "use strict";
 
     grunt.initConfig({
@@ -18,7 +18,7 @@ module.exports = function (grunt) {
                     sourceMap: false,
                     allowUnreachableCode: false,
                     allowUnusedLabels: false,
-                    declaration: true,
+                    declaration: false,
                     forceConsistentCasingInFileNames: true,
                     noFallthroughCasesInSwitch: true,
                     noImplicitReturns: true,

@@ -51,6 +51,7 @@ AWS Lambda provides aws-sdk as an npm module once deployed, so it need not be ch
 ### To deploy/update
 
 ```sh
+$ npm run prepareForDeploy
 $ npm run deployToAws -- --stage rd --profile PROFILE_NAME_GOES_HERE --region AWS_REGION_GOES_HERE deploy
 ```
 
@@ -61,5 +62,14 @@ This task packages your code into a zip and publishes it along with the cloudfor
 ```sh
 $ npm run deployToAws -- --stage rd --profile PROFILE_NAME_GOES_HERE --region AWS_REGION_GOES_HERE remove
 ```
+
+## Documentation Generation
+
+This project relies on [grunt-apidoc](https://github.com/apidoc/grunt-apidoc) to generate docs.
+
+```sh
+$ npm run grunt watch
+```
+
 
 > Maintained by Tanmay Binaykiya

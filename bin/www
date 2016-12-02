@@ -4,7 +4,7 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 
-process.env.SMG_LOCAL = true;
+process.env.IS_LOCAL = true;
 process.env.AWS_PROFILE = "aws-profile-name";
 process.env.NODE_DEBUG = "request";
 process.env.SERVERLESS_REGION = "us-west-2";

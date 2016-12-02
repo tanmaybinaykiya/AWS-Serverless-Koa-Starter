@@ -6,13 +6,13 @@ import { IncomingMessage } from "http";
 
 import { Response } from "../../application/dummy/view";
 
-const requestUrl: string = "http://localhost:9876/dummy/internal/ping";
+const requestUrl: string = "https://jsonplaceholder.typicode.com/posts/1";
 
 export class InternalClient {
 
     public static internalPing(): Promise<Response> {
 
-        return new Promise<Response>(function (resolve: (resp: Response) => void, reject: (err: Error) => void) {
+        return new Promise<Response>(function(resolve: (resp: Response) => void, reject: (err: Error) => void) {
             let requestOptions: any = {
                 json: true,
                 url: requestUrl,

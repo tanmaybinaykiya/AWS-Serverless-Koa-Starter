@@ -18,25 +18,25 @@ functions:
     events:
       - http:
           integration: ${self:custom.integration}
-          path: auth/{proxy+}
+          path: dummy/{proxy+}
           method: get
           # see http://forum.serverless.com/t/serverless-v1-0-cors-methods-with-any-http-method/580
           cors: ${self:custom.cors}
       - http:
           integration: ${self:custom.integration}
-          path: auth/{proxy+}
+          path: dummy/{proxy+}
           method: put
           # see http://forum.serverless.com/t/serverless-v1-0-cors-methods-with-any-http-method/580
           cors: ${self:custom.cors}
       - http:
           integration: ${self:custom.integration}
-          path: auth/{proxy+}
+          path: dummy/{proxy+}
           method: post
           # see http://forum.serverless.com/t/serverless-v1-0-cors-methods-with-any-http-method/580
           cors: ${self:custom.cors}
       - http:
           integration: ${self:custom.integration}
-          path: auth/{proxy+}
+          path: dummy/{proxy+}
           method: delete
           # see http://forum.serverless.com/t/serverless-v1-0-cors-methods-with-any-http-method/580
           cors: ${self:custom.cors}

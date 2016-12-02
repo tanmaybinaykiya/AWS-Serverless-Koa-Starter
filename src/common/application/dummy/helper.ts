@@ -11,7 +11,7 @@ export class Helper {
     public static * ping(request: Request) {
         if (request.isValid()) {
             yield InternalClient.internalPing();
-            return new Response("Success" + request.getName());
+            return new Response("Success: " + request.getName());
         } else {
             throw new BadRequestError();
         }
