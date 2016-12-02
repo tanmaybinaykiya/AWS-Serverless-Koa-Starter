@@ -11,4 +11,4 @@ Resources:
         ProvisionedThroughput:
             ReadCapacityUnits: 5
             WriteCapacityUnits: 5
-        TableName: SMG_${self:custom.currentStage}_DummyTableName
+        TableName: DUMMY_${self:custom.currentStage}_DummyTableName
