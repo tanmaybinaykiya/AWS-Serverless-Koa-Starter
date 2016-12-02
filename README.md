@@ -1,5 +1,5 @@
 # aws-serverless-koa-starter
-NodeJS server based on Typescript using [aws-serverless-express](https://github.com/awslabs/aws-serverless-express) wrapped with koa server to support yields.
+NodeJS server based on Typescript using [aws-serverless-express](https://github.com/awslabs/aws-serverless-express) wrapped with [koa](http://koajs.com) server to support yields.
 
 AWS Lambda Supports NodeJS v4.3. Make sure to maintain the same for your development environment.
 
